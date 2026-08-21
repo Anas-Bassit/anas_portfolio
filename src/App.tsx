@@ -1,14 +1,14 @@
-import { Container } from './components/layout/Container';
+import { Header } from './components/layout/Header';
+import { Hero } from './components/sections/Hero';
 
 function App() {
   return (
-    <main className="grid min-h-screen place-items-center px-6 py-16">
-      <Container>
-        <p className="text-center text-xl font-medium">
-          Anas Bassit — Portfolio rebuild in progress
-        </p>
-      </Container>
-    </main>
+    <div className="min-h-screen overflow-x-clip">
+      <Header />
+      <main>
+        <Hero />
+      </main>
+    </div>
   );
 }
 
