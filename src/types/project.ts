@@ -34,10 +34,7 @@ export const PROJECT_KIND_LABELS: Record<ProjectKind, string> = {
   'professional-contribution': 'Professional Contribution',
 };
 
-export type ProjectSourceVisibility =
-  | 'public'
-  | 'private'
-  | 'not-applicable';
+export type ProjectSourceVisibility = 'public' | 'private' | 'not-applicable';
 
 export type ProjectImage = {
   src: string;
