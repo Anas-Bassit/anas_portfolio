@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { type MouseEvent, useEffect, useState } from 'react';
 import { Menu, Moon, Sun, X } from 'lucide-react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 
@@ -99,6 +99,36 @@ export function Header() {
     return () => window.removeEventListener('keydown', closeOnEscape);
   }, [isMenuOpen]);
 
+  const handleMobileNavigation = (
+    event: MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    event.preventDefault();
+
+    const target = document.getElementById(href.slice(1));
+    setIsMenuOpen(false);
+
+    if (!target) {
+      window.history.pushState(null, '', href);
+      return;
+    }
+
+    window.history.pushState(null, '', href);
+    window.setTimeout(
+      () => {
+        const headerHeight =
+          document.querySelector('header')?.getBoundingClientRect().height ?? 0;
+        const targetTop = target.getBoundingClientRect().top + window.scrollY;
+
+        window.scrollTo({
+          behavior: shouldReduceMotion ? 'auto' : 'smooth',
+          top: Math.max(targetTop - headerHeight - 16, 0),
+        });
+      },
+      shouldReduceMotion ? 0 : 190,
+    );
+  };
+
   return (
     <header className="border-primary/20 bg-canvas sticky top-0 z-50 border-b transition-colors duration-200">
       <Container className="flex h-18 items-center justify-between gap-6">
@@ -173,7 +203,9 @@ export function Header() {
                     <a
                       className="text-secondary hover:bg-surface-raised hover:text-primary focus-visible:outline-accent block px-1 py-3 text-sm font-bold tracking-[0.12em] uppercase transition-colors focus-visible:outline-2"
                       href={item.href}
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={(event) =>
+                        handleMobileNavigation(event, item.href)
+                      }
                     >
                       {item.label}
                     </a>

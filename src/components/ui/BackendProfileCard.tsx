@@ -20,7 +20,7 @@ export function BackendProfileCard() {
       initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
       transition={{ delay: shouldReduceMotion ? 0 : 0.12, duration: 0.35 }}
     >
-      <div className="border-primary/80 grid grid-cols-[5rem_minmax(0,1fr)] border-b">
+      <div className="border-primary/80 grid grid-cols-[7.25rem_minmax(0,1fr)] border-b sm:grid-cols-[9rem_minmax(0,1fr)]">
         <p className="border-primary/80 text-accent border-r px-3 py-3 font-mono text-xs font-bold tracking-[0.16em] uppercase sm:p-4">
           Meta
         </p>

@@ -11,7 +11,7 @@ const details = [
   {
     icon: GraduationCap,
     label: 'Education',
-    value: 'Informatics Engineering',
+    value: 'Computer Science',
   },
 ] as const;
 
