@@ -7,6 +7,30 @@
       name="description"
       content="The personal portfolio of backend developer Anas Bassit."
     />
+    <script>
+      (() => {
+        const storageKey = 'anas-portfolio-theme';
+
+        try {
+          const storedTheme = localStorage.getItem(storageKey);
+          const prefersDark = window.matchMedia(
+            '(prefers-color-scheme: dark)',
+          ).matches;
+          const theme =
+            storedTheme === 'light' || storedTheme === 'dark'
+              ? storedTheme
+              : prefersDark
+                ? 'dark'
+                : 'light';
+
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+        } catch {
+          document.documentElement.dataset.theme = 'light';
+          document.documentElement.style.colorScheme = 'light';
+        }
+      })();
+    </script>
     <title>Anas Bassit | Portfolio</title>
   </head>
   <body>

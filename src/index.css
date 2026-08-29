@@ -1,32 +1,69 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-canvas: #080c12;
-  --color-surface: #0e141d;
-  --color-surface-raised: #121a25;
-  --color-subtle: #202b39;
-  --color-primary: #f2f6fb;
-  --color-secondary: #aab6c5;
-  --color-muted: #6f7c8d;
-  --color-accent: #38bdf8;
-  --color-accent-soft: #7dd3fc;
-  --radius-card: 0.75rem;
-  --radius-panel: 1.125rem;
-  --shadow-panel: 0 24px 70px rgb(0 0 0 / 0.28);
+  --color-canvas: var(--theme-canvas);
+  --color-surface: var(--theme-surface);
+  --color-surface-raised: var(--theme-surface-raised);
+  --color-subtle: var(--theme-subtle);
+  --color-primary: var(--theme-primary);
+  --color-secondary: var(--theme-secondary);
+  --color-muted: var(--theme-muted);
+  --color-accent: var(--theme-accent);
+  --color-accent-soft: var(--theme-accent-soft);
+  --color-charcoal: var(--theme-charcoal);
+  --color-ink-inverse: var(--theme-ink-inverse);
+  --radius-card: 0.125rem;
+  --radius-panel: 0.25rem;
+  --shadow-panel: 0 18px 0 rgb(22 22 22 / 0.08);
 }
 
 @layer base {
+  :root {
+    color-scheme: light;
+    --theme-canvas: #f4f0e8;
+    --theme-surface: #fbf8f2;
+    --theme-surface-raised: #e7e2d8;
+    --theme-subtle: #d8d1c7;
+    --theme-primary: #161616;
+    --theme-secondary: #5b5751;
+    --theme-muted: #7d766d;
+    --theme-accent: #c65a2e;
+    --theme-accent-soft: #2f5d62;
+    --theme-charcoal: #191917;
+    --theme-ink-inverse: #f3efe6;
+    --theme-grid: rgb(22 22 22 / 0.07);
+    --theme-selection: color-mix(in srgb, var(--theme-accent) 28%, transparent);
+  }
+
+  :root[data-theme='dark'] {
+    color-scheme: dark;
+    --theme-canvas: #111110;
+    --theme-surface: #181817;
+    --theme-surface-raised: #20201e;
+    --theme-subtle: #34332f;
+    --theme-primary: #f2efe8;
+    --theme-secondary: #b7b1a8;
+    --theme-muted: #8e8981;
+    --theme-accent: #e07143;
+    --theme-accent-soft: #6fa7ad;
+    --theme-charcoal: #0b0b0a;
+    --theme-ink-inverse: #f3efe6;
+    --theme-grid: rgb(243 239 230 / 0.055);
+    --theme-selection: color-mix(in srgb, var(--theme-accent) 36%, transparent);
+  }
+
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 4.5rem;
+    background: var(--theme-canvas);
   }
 
   body {
     margin: 0;
     min-width: 320px;
     min-height: 100vh;
-    background: var(--color-canvas);
-    color: var(--color-primary);
+    background: var(--theme-canvas);
+    color: var(--theme-primary);
     font-family:
       Inter,
       ui-sans-serif,
@@ -36,6 +73,9 @@
       'Segoe UI',
       sans-serif;
     text-rendering: optimizeLegibility;
+    transition:
+      background-color 180ms ease,
+      color 180ms ease;
   }
 
   button,
@@ -44,40 +84,38 @@
   }
 
   ::selection {
-    background: color-mix(in srgb, var(--color-accent) 28%, transparent);
-    color: var(--color-primary);
+    background: var(--theme-selection);
+    color: var(--theme-primary);
   }
 }
 
 @layer components {
   .button-primary,
   .button-secondary {
-    @apply rounded-card focus-visible:outline-accent inline-flex min-h-12 items-center justify-center gap-2 px-5 text-sm font-semibold transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-3;
+    @apply focus-visible:outline-accent inline-flex min-h-12 items-center justify-center gap-2 border px-5 text-sm font-semibold transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-3;
   }
 
   .button-primary {
-    @apply bg-accent text-canvas hover:bg-accent-soft;
+    @apply border-primary bg-primary text-canvas hover:border-accent hover:bg-accent;
   }
 
   .button-secondary {
-    @apply border-subtle bg-surface text-primary hover:border-accent/40 hover:bg-surface-raised border;
+    @apply border-primary/55 text-primary hover:border-accent hover:text-accent bg-transparent;
+  }
+
+  .button-secondary-dark {
+    @apply border-ink-inverse/45 text-ink-inverse hover:border-accent hover:text-accent;
   }
 }
 
 .hero-grid {
   background-image:
-    linear-gradient(to right, rgb(32 43 57 / 0.18) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(32 43 57 / 0.18) 1px, transparent 1px),
-    radial-gradient(
-      circle at 76% 38%,
-      rgb(56 189 248 / 0.075),
-      transparent 28rem
-    );
+    linear-gradient(to right, var(--theme-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--theme-grid) 1px, transparent 1px);
   background-size:
-    64px 64px,
-    64px 64px,
-    100% 100%;
-  mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+    72px 72px,
+    72px 72px;
+  mask-image: linear-gradient(to bottom, black 0%, black 78%, transparent 100%);
   width: 100%;
 }
 

@@ -12,30 +12,32 @@ export function Hero() {
 
   return (
     <section
-      className="relative isolate py-14 min-[960px]:py-20 sm:py-18 xl:py-24"
+      className="bg-canvas relative isolate py-16 sm:py-20 lg:py-24"
       id="top"
     >
       <div aria-hidden="true" className="hero-grid absolute inset-0 -z-10" />
-      <Container className="grid min-w-0 items-center gap-12 min-[960px]:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] min-[960px]:gap-12 xl:gap-16">
+      <Container className="grid min-w-0 items-end gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,0.72fr)] lg:gap-16">
         <motion.div
           animate={{ opacity: 1, y: 0 }}
           initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
-          transition={{ duration: 0.42 }}
+          transition={{ duration: 0.35 }}
         >
-          <p className="text-accent mb-5 flex items-center gap-3 text-sm font-semibold tracking-[0.12em] uppercase">
-            <span aria-hidden="true" className="bg-accent/70 h-px w-8" />
+          <p className="border-primary/30 text-muted mb-8 inline-flex border-y py-2 font-mono text-xs font-bold tracking-[0.18em] uppercase">
             Backend Developer
           </p>
-          <h1 className="text-primary max-w-[44rem] text-[clamp(2.35rem,4.4vw,4rem)] leading-[1.08] font-semibold tracking-[-0.04em]">
+          <p className="text-accent mb-4 text-xl font-black sm:text-2xl">
+            Anas Bassit
+          </p>
+          <h1 className="text-primary max-w-4xl text-4xl leading-none font-black sm:text-6xl lg:text-7xl">
             Building reliable backend systems, APIs, and business applications.
           </h1>
-          <p className="text-secondary mt-6 max-w-[40rem] text-base leading-7 sm:text-lg sm:leading-8">
+          <p className="text-secondary mt-6 max-w-2xl text-base leading-7 sm:mt-8 sm:text-lg sm:leading-8">
             I’m Anas Bassit. I build maintainable backend systems with Laravel
             and ASP.NET Core, with a focus on REST APIs, relational databases,
             integrations, and clear business logic.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <a className="button-primary" href="#projects">
               View My Work
               <ArrowRight aria-hidden="true" className="size-4" />
@@ -45,7 +47,7 @@ export function Hero() {
             </a>
           </div>
 
-          <div className="mt-7 flex items-center gap-2">
+          <div className="mt-7 flex flex-wrap items-center gap-2">
             <SocialLink
               href={GITHUB_URL}
               icon={GitHubIcon}

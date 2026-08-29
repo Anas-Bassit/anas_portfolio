@@ -29,35 +29,40 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
   }
 
   return (
-    <details className="border-subtle group mt-6 border-t pt-5">
-      <summary className="text-accent focus-visible:outline-accent inline-flex cursor-pointer rounded-sm text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-4">
+    <details className="border-primary/25 group mt-7 border-t pt-5">
+      <summary className="text-accent focus-visible:outline-accent inline-flex cursor-pointer text-sm font-black focus-visible:outline-2 focus-visible:outline-offset-4">
         View project details
       </summary>
 
-      <div className="mt-5 grid gap-5">
+      <div className="border-primary/20 mt-6 grid gap-0 border-y md:grid-cols-2">
         {visibleGroups.map((group) => (
-          <section key={group.title}>
-            <h4 className="text-muted text-xs font-semibold tracking-[0.1em] uppercase">
+          <section
+            className="border-primary/20 border-b py-5 md:border-r md:px-5 first:md:pl-0 even:md:border-r-0"
+            key={group.title}
+          >
+            <h4 className="text-muted text-xs font-black tracking-[0.16em] uppercase">
               {group.title}
             </h4>
 
             {group.body && (
-              <p className="text-secondary mt-2 text-sm leading-6">
+              <p className="text-secondary mt-3 text-sm leading-6">
                 {group.body}
               </p>
             )}
 
             {group.items && (
-              <ul className="mt-3 grid gap-2">
+              <ul className="mt-3 space-y-2.5">
                 {group.items.map((item) => (
                   <li
-                    className="text-secondary flex items-start gap-3 text-sm leading-6"
+                    className="text-secondary grid grid-cols-[1rem_minmax(0,1fr)] gap-3 text-sm leading-6"
                     key={item}
                   >
                     <span
                       aria-hidden="true"
-                      className="bg-accent mt-2 size-1.5 shrink-0 rounded-full"
-                    />
+                      className="text-accent font-mono font-bold"
+                    >
+                      /
+                    </span>
                     <span>{item}</span>
                   </li>
                 ))}

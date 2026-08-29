@@ -6,23 +6,29 @@ import { SectionHeading } from '../ui/SectionHeading';
 export function Projects() {
   return (
     <section
-      className="border-subtle bg-surface/25 border-y py-20 sm:py-24 lg:py-28"
+      className="border-primary/15 bg-canvas border-y py-20 sm:py-24 lg:py-28"
       id="projects"
     >
       <Container>
         <SectionHeading
           eyebrow="Selected Work"
           heading="Projects and systems I've worked on."
+          number="03"
         />
 
         {projects.length > 0 ? (
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:gap-6">
-            {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+          <div className="border-primary/25 mt-12 border-t">
+            {projects.map((project, index) => (
+              <ProjectCard
+                index={index}
+                key={project.id}
+                project={project}
+                total={projects.length}
+              />
             ))}
           </div>
         ) : (
-          <p className="border-subtle text-muted mt-8 max-w-2xl border-t pt-6 text-sm leading-6">
+          <p className="border-primary/25 text-muted mt-8 max-w-2xl border-t pt-6 text-sm leading-6">
             Selected project details are being prepared.
           </p>
         )}

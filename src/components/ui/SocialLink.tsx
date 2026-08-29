@@ -22,9 +22,9 @@ export function SocialLink({
     </>
   );
 
-  const className = `inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-subtle px-3 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-accent ${
+  const className = `inline-flex min-h-10 items-center justify-center gap-2 border border-primary/30 px-3 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-accent ${
     href
-      ? 'text-secondary hover:border-accent/40 hover:bg-surface-raised hover:text-primary'
+      ? 'text-primary hover:border-accent hover:text-accent'
       : 'cursor-not-allowed text-muted opacity-60'
   }`;
 

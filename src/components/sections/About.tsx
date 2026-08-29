@@ -20,23 +20,24 @@ export function About() {
 
   return (
     <section
-      className="border-subtle bg-surface/35 border-y py-20 sm:py-24 lg:py-28"
+      className="border-primary/15 bg-surface border-y py-20 sm:py-24 lg:py-28"
       id="about"
     >
       <Container>
         <motion.div
           initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
-          transition={{ duration: 0.45 }}
+          transition={{ duration: 0.35 }}
           viewport={{ once: true, amount: 0.2 }}
           whileInView={{ opacity: 1, y: 0 }}
         >
           <SectionHeading
             eyebrow="About"
             heading="Backend development shaped by real-world projects."
+            number="01"
           />
 
-          <div className="mt-10 grid items-start gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(20rem,0.92fr)] lg:gap-16 xl:gap-20">
-            <div className="text-secondary max-w-2xl space-y-5 text-base leading-7 sm:text-lg sm:leading-8">
+          <div className="mt-12 grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-16">
+            <div className="text-secondary border-primary/20 max-w-3xl space-y-6 border-l-2 pl-5 text-base leading-7 sm:pl-8 sm:text-lg sm:leading-8">
               <p>
                 I’m a backend developer at Pancode with hands-on experience
                 building reliable systems for web and mobile products using
@@ -55,25 +56,25 @@ export function About() {
               </p>
             </div>
 
-            <dl className="grid gap-3 sm:grid-cols-2">
+            <dl className="border-primary/30 divide-primary/20 divide-y border-y">
               {details.map(({ icon: Icon, label, value }) => (
                 <div
-                  className="rounded-card border-subtle bg-canvas/55 flex min-h-24 flex-col justify-between border p-4"
+                  className="grid grid-cols-[2rem_minmax(0,1fr)] gap-4 py-4"
                   key={label}
                 >
-                  <div className="flex items-center gap-2">
-                    <Icon
-                      aria-hidden="true"
-                      className="text-accent size-4"
-                      strokeWidth={1.8}
-                    />
-                    <dt className="text-muted text-xs font-semibold tracking-[0.1em] uppercase">
+                  <Icon
+                    aria-hidden="true"
+                    className="text-accent mt-1 size-4"
+                    strokeWidth={1.8}
+                  />
+                  <div>
+                    <dt className="text-muted text-xs font-bold tracking-[0.16em] uppercase">
                       {label}
                     </dt>
+                    <dd className="text-primary mt-1 text-sm font-bold sm:text-base">
+                      {value}
+                    </dd>
                   </div>
-                  <dd className="text-primary mt-3 text-sm font-medium sm:text-base">
-                    {value}
-                  </dd>
                 </div>
               ))}
             </dl>
