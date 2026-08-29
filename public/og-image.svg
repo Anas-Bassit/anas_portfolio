@@ -1,0 +1,27 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F4F0E8" />
+  <path d="M80 80H1120V550H80V80Z" stroke="#161616" stroke-width="3" />
+  <path d="M80 176H1120" stroke="#D8D1C7" stroke-width="2" />
+  <path d="M305 80V550" stroke="#D8D1C7" stroke-width="2" />
+  <path d="M80 470H1120" stroke="#D8D1C7" stroke-width="2" />
+  <path d="M0 0H1200V630H0V0Z" fill="url(#grid)" opacity="0.38" />
+
+  <text x="118" y="139" fill="#C65A2E" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800" letter-spacing="5">BACKEND DEVELOPER</text>
+  <text x="346" y="298" fill="#161616" font-family="Inter, Arial, sans-serif" font-size="92" font-weight="900" letter-spacing="-4">Anas Bassit</text>
+  <text x="346" y="369" fill="#5B5751" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="700">Laravel · ASP.NET Core · REST APIs</text>
+  <text x="346" y="424" fill="#5B5751" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="600">Databases · Integrations · Business Applications</text>
+
+  <text x="118" y="294" fill="#161616" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="72" font-weight="700">01</text>
+  <text x="118" y="336" fill="#7D766D" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" letter-spacing="4">PORTFOLIO</text>
+  <text x="118" y="510" fill="#2F5D62" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800">anas-portfolio-5fw.pages.dev</text>
+
+  <rect x="1000" y="108" width="82" height="20" fill="#C65A2E" />
+  <rect x="1000" y="138" width="54" height="20" fill="#2F5D62" />
+  <rect x="1000" y="500" width="82" height="20" fill="#161616" />
+
+  <defs>
+    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" stroke="#D8D1C7" stroke-width="1" />
+    </pattern>
+  </defs>
+</svg>
