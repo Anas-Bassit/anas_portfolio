@@ -32,9 +32,9 @@ export function Hero() {
             Building reliable backend systems, APIs, and business applications.
           </h1>
           <p className="text-secondary mt-6 max-w-2xl text-base leading-7 sm:mt-8 sm:text-lg sm:leading-8">
-            I’m Anas Bassit. I build maintainable backend systems with Laravel
-            and ASP.NET Core, with a focus on REST APIs, relational databases,
-            integrations, and clear business logic.
+            I’m Anas Bassit. I work mainly with Laravel and ASP.NET Core,
+            shaping APIs, data workflows, integrations, and maintainable
+            business logic for real product needs.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">

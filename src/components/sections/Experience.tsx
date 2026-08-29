@@ -4,10 +4,10 @@ import { Container } from '../layout/Container';
 import { SectionHeading } from '../ui/SectionHeading';
 
 const responsibilities = [
-  'Build and maintain REST APIs and backend features for production software projects.',
-  'Implement business logic, authentication, authorization, and database-driven workflows.',
+  'Develop and maintain REST APIs and backend features for production software projects.',
+  'Translate feature requirements into business logic, authentication, authorization, and database-driven workflows.',
   'Design and maintain relational data models and work with existing production databases.',
-  'Connect backend services with web and mobile applications and external integrations.',
+  'Integrate backend services with web and mobile applications and external systems.',
   'Debug, maintain, and extend existing systems across e-commerce, gaming-related, and business applications.',
   'Collaborate with frontend, mobile, and other team members throughout feature delivery.',
 ] as const;

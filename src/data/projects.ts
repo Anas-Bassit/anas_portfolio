@@ -18,17 +18,17 @@ export const projects: readonly Project[] = [
       'Multi-store e-commerce platforms need to keep customers, merchants, administrators, and delivery workflows connected to the same business data and rules without duplicating backend logic across separate applications.',
 
     solution:
-      'Built a centralized Laravel backend that exposes shared APIs and business workflows for the Shoply customer app, merchant dashboard, admin dashboard, and delivery application.',
+      'Created a centralized Laravel backend that exposes shared APIs and business workflows for the Shoply customer app, merchant dashboard, admin dashboard, and delivery application.',
 
     backendWork: [
       'Designed and developed REST APIs serving customer, merchant, admin, and delivery applications from a shared backend.',
       'Implemented authentication, token refresh, OTP and password recovery flows, role-based access control, and application-specific authorization.',
-      'Built core commerce workflows covering merchants, stores, branches, products, categories, carts, checkout, orders, and delivery.',
+      'Developed core commerce workflows covering merchants, stores, branches, products, categories, carts, checkout, orders, and delivery.',
       'Implemented Stripe payment workflows, including payment state handling and webhook processing.',
       'Developed customer-facing features including addresses, reviews, ratings, search, filtering, pagination, and product recommendations.',
       'Implemented Firebase notification workflows and queued background processing.',
       'Handled file and image uploads using persistent storage.',
-      'Built administrative workflows for managing users, merchants, stores, products, orders, payments, and operational data.',
+      'Delivered administrative workflows for managing users, merchants, stores, products, orders, payments, and operational data.',
     ],
 
     highlights: [
@@ -86,10 +86,10 @@ export const projects: readonly Project[] = [
       'Built a Laravel-based backend that lets clients assemble occasion orders from multiple service providers, while owners manage their services and bookings, with an additional module for public events and ticket purchases.',
 
     backendWork: [
-      'Designed REST-style endpoints for authentication, occasion orders, service discovery, bookings, ratings, and ticket purchases.',
+      'Designed REST API endpoints for authentication, occasion orders, service discovery, bookings, ratings, and ticket purchases.',
       'Modeled users, halls, cars, restaurants, decorations, inventory items, orders, events, tickets, images, and ratings using Eloquent ORM.',
       'Implemented JWT bearer authentication alongside a partial session-based owner workflow.',
-      'Built business rules around hall capacity, occasion category, date availability, account balance, and provider inventory.',
+      'Defined business rules around hall capacity, occasion category, date availability, account balance, and provider inventory.',
       'Implemented service booking flows and internal balance transfers between clients and service owners.',
       'Added multipart media uploads using Laravel filesystem storage.',
     ],
@@ -147,10 +147,10 @@ export const projects: readonly Project[] = [
       'Concurrent order requests can oversell limited inventory when multiple application instances read and update the same stock without proper coordination.',
 
     solution:
-      'Built multiple order-processing strategies to compare unsafe stock updates, transactional row locking, Redis-backed distributed locking, rollback behavior, caching, and synchronous versus queued background processing.',
+      'Developed multiple order-processing strategies to compare unsafe stock updates, transactional row locking, Redis-backed distributed locking, rollback behavior, caching, and synchronous versus queued background processing.',
 
     backendWork: [
-      'Built product, order, order-item, and invoice persistence using Laravel, Eloquent, and MySQL.',
+      'Modeled product, order, order-item, and invoice persistence using Laravel, Eloquent, and MySQL.',
       'Implemented atomic order processing using database transactions and pessimistic row-level locking.',
       'Implemented Redis-backed distributed locks for coordinating stock updates across multiple application instances.',
       'Added Redis caching with cache warming, hit/miss behavior, TTL handling, and explicit invalidation.',

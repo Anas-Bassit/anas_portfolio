@@ -39,9 +39,8 @@ export function About() {
           <div className="mt-12 grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-16">
             <div className="text-secondary border-primary/20 max-w-3xl space-y-6 border-l-2 pl-5 text-base leading-7 sm:pl-8 sm:text-lg sm:leading-8">
               <p>
-                I’m a backend developer at Pancode with hands-on experience
-                building reliable systems for web and mobile products using
-                Laravel and ASP.NET Core.
+                I’m a backend developer at Pancode, working on reliable web and
+                mobile product backends across real business workflows.
               </p>
               <p>
                 My experience includes real-world projects across e-commerce,

@@ -25,7 +25,7 @@ export function BackendProfileCard() {
           Meta
         </p>
         <p className="text-primary px-3 py-3 text-sm font-black tracking-[0.14em] uppercase sm:p-4">
-          Backend Engineer
+          Backend Developer
         </p>
       </div>
 
